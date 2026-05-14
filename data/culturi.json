@@ -1,0 +1,306 @@
+{
+  "categorii": [
+    {"id": "pomi", "nume": "Pomi fructiferi", "icon": "🌳"},
+    {"id": "vita", "nume": "Viță de vie", "icon": "🍇"},
+    {"id": "arbusti", "nume": "Arbuști și căpșuni", "icon": "🍓"},
+    {"id": "legume_radacinoase", "nume": "Legume rădăcinoase", "icon": "🥕"},
+    {"id": "legume_fructifere", "nume": "Legume fructifere", "icon": "🍅"},
+    {"id": "bulboase", "nume": "Bulboase", "icon": "🧅"},
+    {"id": "frunzoase", "nume": "Frunzoase și vărzoase", "icon": "🥬"},
+    {"id": "camp", "nume": "Culturi de câmp", "icon": "🌽"},
+    {"id": "aromatice", "nume": "Plante aromatice", "icon": "🌿"}
+  ],
+  "tipuri_lucrari": {
+    "plantat": {"culoare": "#10b981", "icon": "🌱"},
+    "stropit": {"culoare": "#3b82f6", "icon": "💧"},
+    "taieri": {"culoare": "#f59e0b", "icon": "✂️"},
+    "fertilizat": {"culoare": "#8b5cf6", "icon": "🧪"},
+    "lucrare_sol": {"culoare": "#92400e", "icon": "🪓"},
+    "cules": {"culoare": "#dc2626", "icon": "🧺"},
+    "altele": {"culoare": "#6b7280", "icon": "📌"}
+  },
+  "culturi": [
+    {
+      "id": "mar",
+      "nume": "Măr",
+      "categorie": "pomi",
+      "icon": "🍎",
+      "lucrari": [
+        {"tip": "taieri", "luna_start": 2, "luna_end": 3, "titlu": "Tăieri de rodire și formare", "descriere": "Eliminarea ramurilor uscate, bolnave, concurente. Scurtarea pentru lumină.", "conditii": "Vreme uscată, fără ger sub -5°C"},
+        {"tip": "stropit", "luna_start": 2, "luna_end": 3, "titlu": "Stropit de iarnă (repaus)", "descriere": "Zeamă bordeleză 1.5-3% sau ulei horticol + cupru. Reduce inoculul de rapăn și ouă de dăunători.", "conditii": "T > 5°C, fără ploaie 24h, înainte de umflarea mugurilor"},
+        {"tip": "stropit", "luna_start": 3, "luna_end": 4, "titlu": "Dezmugurit — buton roz", "descriere": "Fungicid pentru rapăn (Captan/Dithane) + insecticid pentru afide și viermele mugurilor.", "conditii": "T > 8°C, vânt < 15 km/h, fără ploaie 24h"},
+        {"tip": "stropit", "luna_start": 4, "luna_end": 5, "titlu": "După scuturarea petalelor", "descriere": "Tratament critic împotriva viermelui merelor (Cydia pomonella) — feromoni sau insecticid specific.", "conditii": "Sumă temp > 90°C de la zborul fluturelui, fără ploaie 48h"},
+        {"tip": "fertilizat", "luna_start": 3, "luna_end": 4, "titlu": "Fertilizare de primăvară", "descriere": "Îngrășământ complex NPK (200-400g/pom matur) împrăștiat sub coroană și încorporat.", "conditii": "Sol umed, înainte de înflorire"},
+        {"tip": "stropit", "luna_start": 6, "luna_end": 7, "titlu": "Tratament de vară — generația 2 vierme", "descriere": "Repetare tratament Cydia pomonella; adăugare fungicid dacă vremea e umedă.", "conditii": "T > 15°C, fără ploaie 24h"},
+        {"tip": "cules", "luna_start": 8, "luna_end": 10, "titlu": "Cules", "descriere": "Soiurile de vară (iulie-august), toamnă (sept), iarnă (oct). Test amidon pentru maturitate.", "conditii": "Fructe ferme, fără rouă; verifică ușor cu o rotire"},
+        {"tip": "stropit", "luna_start": 10, "luna_end": 11, "titlu": "Stropit post-recoltă (cădere frunze)", "descriere": "Cupru (zeamă bordeleză 2%) pe frunze pe jumătate căzute. Combate rapăn pentru anul viitor.", "conditii": "70% frunze căzute, T > 5°C"}
+      ]
+    },
+    {
+      "id": "par",
+      "nume": "Păr",
+      "categorie": "pomi",
+      "icon": "🍐",
+      "lucrari": [
+        {"tip": "taieri", "luna_start": 2, "luna_end": 3, "titlu": "Tăieri de iarnă", "descriere": "Tăieri moderate, mai ușoare ca la măr — părul are creștere mai verticală.", "conditii": "Vreme uscată, fără ger"},
+        {"tip": "stropit", "luna_start": 2, "luna_end": 3, "titlu": "Stropit de iarnă", "descriere": "Cupru + ulei horticol. ATENȚIE la focul bacterian (Erwinia) — eliminați ramurile suspecte.", "conditii": "T > 5°C, fără ploaie 24h"},
+        {"tip": "stropit", "luna_start": 4, "luna_end": 4, "titlu": "Pre-înflorit", "descriere": "Cupru cu doză redusă (0.2%) sau Aliette împotriva focului bacterian. Insecticid pentru psilă.", "conditii": "Mugur alb-roz, T > 10°C"},
+        {"tip": "stropit", "luna_start": 5, "luna_end": 6, "titlu": "Post-înflorit", "descriere": "Fungicid contra rapănului perelor + monitorizare psilă (Cacopsylla pyri).", "conditii": "Fără ploaie 48h"},
+        {"tip": "cules", "luna_start": 7, "luna_end": 10, "titlu": "Cules", "descriere": "Soiurile de vară (iulie), toamnă (aug-sept), iarnă (oct). Culegi puțin tari, se înmoaie după.", "conditii": "Pedunculul se desprinde ușor la rotire ușoară"}
+      ]
+    },
+    {
+      "id": "prun",
+      "nume": "Prun",
+      "categorie": "pomi",
+      "icon": "🟣",
+      "lucrari": [
+        {"tip": "taieri", "luna_start": 2, "luna_end": 3, "titlu": "Tăieri de iarnă", "descriere": "Tăieri reduse, eliminați doar ramurile uscate/bolnave. Prunul nu tolerează tăieri severe.", "conditii": "Vreme uscată, peste 0°C"},
+        {"tip": "stropit", "luna_start": 2, "luna_end": 3, "titlu": "Repaus — stropit cupru", "descriere": "Zeamă bordeleză 2% împotriva ciuruirii (Stigmina) și plumării (Polystigma).", "conditii": "T > 5°C, fără ploaie 24h"},
+        {"tip": "stropit", "luna_start": 4, "luna_end": 5, "titlu": "Post-înflorit — viespea prunelor", "descriere": "Tratament Hoplocampa flava (viespea care face fructe căzute). 7-10 zile după scuturarea petalelor.", "conditii": "T > 15°C, fără vânt"},
+        {"tip": "stropit", "luna_start": 5, "luna_end": 6, "titlu": "Vierme prune generația 1", "descriere": "Insecticid contra Cydia funebrana — la zborul fluturelui (capcane feromonale).", "conditii": "T > 16°C seara, fără ploaie 24h"},
+        {"tip": "stropit", "luna_start": 7, "luna_end": 8, "titlu": "Vierme prune generația 2", "descriere": "Repetare tratament cu 14-21 zile înainte de cules.", "conditii": "Respectați timpul de pauză al produsului"},
+        {"tip": "cules", "luna_start": 7, "luna_end": 9, "titlu": "Cules", "descriere": "Soiurile timpurii iulie, mijlocii august, târzii septembrie. Pentru țuică, culege bine coapte.", "conditii": "Fructe ușor moi, parfumate"}
+      ]
+    },
+    {
+      "id": "cires",
+      "nume": "Cireș",
+      "categorie": "pomi",
+      "icon": "🍒",
+      "lucrari": [
+        {"tip": "taieri", "luna_start": 6, "luna_end": 7, "titlu": "Tăieri DUPĂ recoltare (NU iarna!)", "descriere": "Cireșul se taie după cules pentru a evita gomoza și infecțiile. Tăieri ușoare.", "conditii": "Vreme uscată, după recoltă, pe vremea caldă"},
+        {"tip": "stropit", "luna_start": 2, "luna_end": 3, "titlu": "Stropit de iarnă", "descriere": "Cupru contra cilindrosporiozei și monilioxei. Tratament esențial.", "conditii": "T > 5°C, mugur dormant"},
+        {"tip": "stropit", "luna_start": 5, "luna_end": 6, "titlu": "Musca cireșelor — capcane galbene", "descriere": "Capcane lipicioase galbene de la cireșe galbene-roz. Tratament dacă > 5 muște/capcană.", "conditii": "T > 18°C, fără ploaie"},
+        {"tip": "cules", "luna_start": 5, "luna_end": 7, "titlu": "Cules", "descriere": "Soiurile timpurii sfârșit mai, mijlocii iunie, târzii iulie. Culege cu codiță pentru păstrare.", "conditii": "Dimineața după ce s-a uscat roua"}
+      ]
+    },
+    {
+      "id": "cais",
+      "nume": "Cais",
+      "categorie": "pomi",
+      "icon": "🍑",
+      "lucrari": [
+        {"tip": "stropit", "luna_start": 1, "luna_end": 2, "titlu": "Repaus — monilioză", "descriere": "Cupru 2% — caisul e foarte sensibil la monilioză. Tratament obligatoriu.", "conditii": "T > 3°C, fără ploaie 24h"},
+        {"tip": "stropit", "luna_start": 3, "luna_end": 3, "titlu": "Buton alb — monilioza florilor", "descriere": "Fungicid sistemic (Topsin, Signum) — protejează florile, care înfloresc devreme și prind brumă.", "conditii": "Înainte de deschiderea florilor"},
+        {"tip": "taieri", "luna_start": 6, "luna_end": 7, "titlu": "Tăieri după recoltă", "descriere": "La fel ca cireșul — tăieri vara pentru a evita gomoza.", "conditii": "Vreme uscată, după cules"},
+        {"tip": "cules", "luna_start": 6, "luna_end": 7, "titlu": "Cules", "descriere": "Caise coapte dau gust optim — culege când cedează ușor la apăsare.", "conditii": "Fructe ferme dar cedând la presiune ușoară"}
+      ]
+    },
+    {
+      "id": "piersic",
+      "nume": "Piersic",
+      "categorie": "pomi",
+      "icon": "🍑",
+      "lucrari": [
+        {"tip": "stropit", "luna_start": 2, "luna_end": 3, "titlu": "CRITIC — Bășicarea frunzelor", "descriere": "Cupru (zeamă bordeleză 2%) ÎNAINTE de umflarea mugurilor. Combate Taphrina — boala #1 a piersicului.", "conditii": "T > 5°C, fără ploaie 48h, mugur dormant"},
+        {"tip": "taieri", "luna_start": 3, "luna_end": 3, "titlu": "Tăieri de primăvară", "descriere": "Tăieri severe — piersicul rodește pe lemn de 1 an. Scurtează ramuri lungi la 30-50cm.", "conditii": "După dezmugurit, înainte de înflorire"},
+        {"tip": "stropit", "luna_start": 5, "luna_end": 6, "titlu": "Vierme piersic + făinare", "descriere": "Insecticid Anarsia/Grapholitha + fungicid contra făinării.", "conditii": "T > 18°C, după 7 zile fără ploaie"},
+        {"tip": "cules", "luna_start": 7, "luna_end": 8, "titlu": "Cules", "descriere": "Culege pe rând — piersicile nu se coc toate odată. Parfumate, ușor moi.", "conditii": "Fără rouă, dimineața răcoros"}
+      ]
+    },
+    {
+      "id": "nuc",
+      "nume": "Nuc",
+      "categorie": "pomi",
+      "icon": "🌰",
+      "lucrari": [
+        {"tip": "stropit", "luna_start": 4, "luna_end": 5, "titlu": "Bacterioză + antracnoză", "descriere": "Cupru (Funguran, Champion) la pornirea în vegetație. Esențial în ani umezi.", "conditii": "Frunze tinere, fără ploaie 24h"},
+        {"tip": "stropit", "luna_start": 6, "luna_end": 7, "titlu": "Vierme nuc (Cydia pomonella)", "descriere": "Insecticid când fructele tinere au 1-2 cm. Capcane feromonale pentru monitorizare.", "conditii": "T > 18°C seara"},
+        {"tip": "cules", "luna_start": 9, "luna_end": 10, "titlu": "Cules", "descriere": "Culege când coaja verde crapă. Spală imediat, usucă la soare 5-7 zile.", "conditii": "Vreme uscată — udează nucile = mucegai"}
+      ]
+    },
+    {
+      "id": "vita_de_vie",
+      "nume": "Viță de vie",
+      "categorie": "vita",
+      "icon": "🍇",
+      "lucrari": [
+        {"tip": "taieri", "luna_start": 2, "luna_end": 3, "titlu": "Tăieri de rod", "descriere": "Forma aleasă (cordon, Guyot). Lasă 6-12 ochi pe coarda de rod, cep 2 ochi.", "conditii": "Înainte de plâns (curgerea sevei), T > 0°C"},
+        {"tip": "lucrare_sol", "luna_start": 3, "luna_end": 4, "titlu": "Dezgropat (la soiurile protejate)", "descriere": "Dezveliți butucii dacă au fost îngropați. Săpați la 15-20 cm pentru aerare.", "conditii": "Sol zvântat, fără ger"},
+        {"tip": "stropit", "luna_start": 5, "luna_end": 5, "titlu": "Lăstari 10-15 cm — mană prevenire", "descriere": "Cupru sau Ridomil/Mikal împotriva manei (Plasmopara). Tratament esențial.", "conditii": "Lăstari 10-15 cm, fără ploaie 24h"},
+        {"tip": "stropit", "luna_start": 5, "luna_end": 6, "titlu": "Pre-înflorit", "descriere": "Fungicid combinat mană + făinare (sulf coloidal sau Topas).", "conditii": "Înainte de înflorire, vreme uscată"},
+        {"tip": "stropit", "luna_start": 6, "luna_end": 6, "titlu": "Post-înflorit (boabe mărimea bobului de mazăre)", "descriere": "Cel mai important tratament — mană + făinare + putregai (Switch).", "conditii": "După scuturarea florilor"},
+        {"tip": "stropit", "luna_start": 7, "luna_end": 7, "titlu": "Boabe mărimea bobului de fasole", "descriere": "Continuare tratament boli, plus insecticid molia strugurilor (Lobesia).", "conditii": "Verifică capcane feromonale"},
+        {"tip": "altele", "luna_start": 6, "luna_end": 8, "titlu": "Lucrări verzi — copilit, ciupit, defoliere", "descriere": "Eliminarea copililor, ciupirea vârfurilor, defoliere parțială pentru aerisire.", "conditii": "Lăstari activi, vreme uscată"},
+        {"tip": "cules", "luna_start": 9, "luna_end": 10, "titlu": "Cules struguri", "descriere": "Soiurile timpurii sept, vin oct. Verifică zaharurile cu refractometru (18-22 Brix).", "conditii": "Dimineața după ce se usucă roua, fără ploaie"}
+      ]
+    },
+    {
+      "id": "capsuni",
+      "nume": "Căpșuni",
+      "categorie": "arbusti",
+      "icon": "🍓",
+      "lucrari": [
+        {"tip": "plantat", "luna_start": 8, "luna_end": 9, "titlu": "Plantare (recomandat) — toamna", "descriere": "Plantare la 30 cm pe rând, 70 cm între rânduri. Rod abundent anul următor.", "conditii": "Sol umed, T 15-20°C"},
+        {"tip": "plantat", "luna_start": 3, "luna_end": 4, "titlu": "Plantare alternativă — primăvara", "descriere": "Plantare timpurie, dar rod redus în primul an.", "conditii": "Sol zvântat, după ultimul ger"},
+        {"tip": "lucrare_sol", "luna_start": 3, "luna_end": 3, "titlu": "Curățare după iarnă", "descriere": "Eliminați frunzele uscate. Mulci proaspăt (paie) pentru a păstra fructele curate.", "conditii": "Sol zvântat"},
+        {"tip": "stropit", "luna_start": 4, "luna_end": 5, "titlu": "Putregai gri + făinare", "descriere": "Fungicid (Switch, Signum) la primele flori. Tratament repetat la 10 zile.", "conditii": "Pre-înflorit"},
+        {"tip": "cules", "luna_start": 5, "luna_end": 7, "titlu": "Cules", "descriere": "Culege la 2-3 zile, dimineața. Soiurile remontante rodesc și toamna.", "conditii": "Fructe complet roșii, fără ploaie"},
+        {"tip": "altele", "luna_start": 7, "luna_end": 8, "titlu": "Curățare după rod", "descriere": "Eliminați stolonii, frunzele bătrâne. Fertilizare cu compost.", "conditii": "După ultimul cules"}
+      ]
+    },
+    {
+      "id": "zmeur",
+      "nume": "Zmeur",
+      "categorie": "arbusti",
+      "icon": "🫐",
+      "lucrari": [
+        {"tip": "taieri", "luna_start": 2, "luna_end": 3, "titlu": "Tăieri de primăvară", "descriere": "Eliminați tulpinile bătrâne (cele care au rodit). Lăsați 6-8 tulpini tinere/m.", "conditii": "Repaus vegetativ"},
+        {"tip": "stropit", "luna_start": 4, "luna_end": 5, "titlu": "Antracnoză + viermele zmeurei", "descriere": "Cupru + insecticid când mugurii încep să se deschidă.", "conditii": "Lăstari 15-20 cm"},
+        {"tip": "cules", "luna_start": 6, "luna_end": 9, "titlu": "Cules", "descriere": "Soiurile de vară iunie-iulie, cele remontante august-octombrie.", "conditii": "Fructe se desprind ușor"}
+      ]
+    },
+    {
+      "id": "rosii",
+      "nume": "Roșii",
+      "categorie": "legume_fructifere",
+      "icon": "🍅",
+      "lucrari": [
+        {"tip": "altele", "luna_start": 2, "luna_end": 3, "titlu": "Semănat răsaduri", "descriere": "Semănat în lădițe/ghivece, la 22-25°C. 60-70 zile până la transplant.", "conditii": "Spațiu cald, iluminat 12-14h"},
+        {"tip": "plantat", "luna_start": 5, "luna_end": 5, "titlu": "Plantare în câmp", "descriere": "DUPĂ ultimul îngheț (după 1-15 mai, în funcție de zonă). Distanță 40x70 cm.", "conditii": "T sol > 14°C, fără risc brumă"},
+        {"tip": "stropit", "luna_start": 6, "luna_end": 6, "titlu": "Mană preventiv", "descriere": "Cupru (zeamă bordeleză 1%) sau Ridomil la 2-3 săpt după plantare.", "conditii": "Vreme caldă-umedă, înainte de simptome"},
+        {"tip": "stropit", "luna_start": 6, "luna_end": 8, "titlu": "Tratamente repetate mană", "descriere": "Repetare la 10-14 zile, mai des în veri ploioase. Alternați produsele.", "conditii": "După ploi"},
+        {"tip": "altele", "luna_start": 6, "luna_end": 8, "titlu": "Copilit, palisat", "descriere": "Eliminați copilii săptămânal. Legați tulpinile de aracii sau sfori.", "conditii": "Dimineața, plante uscate"},
+        {"tip": "cules", "luna_start": 7, "luna_end": 10, "titlu": "Cules", "descriere": "Cules pe rând, fructele cu roșu uniform. La rece, se pot culege roșii-portocalii.", "conditii": "Înainte de prima brumă, culege și verzile pentru păstrare"}
+      ]
+    },
+    {
+      "id": "ardei",
+      "nume": "Ardei",
+      "categorie": "legume_fructifere",
+      "icon": "🫑",
+      "lucrari": [
+        {"tip": "altele", "luna_start": 2, "luna_end": 3, "titlu": "Semănat răsaduri", "descriere": "Mai devreme decât roșiile (germinare lentă). 70-80 zile până la transplant.", "conditii": "25°C, umiditate constantă"},
+        {"tip": "plantat", "luna_start": 5, "luna_end": 6, "titlu": "Plantare câmp", "descriere": "După 15 mai în general — ardeiul nu tolerează frigul deloc. 30x50 cm.", "conditii": "T sol > 16°C, vreme stabilă caldă"},
+        {"tip": "stropit", "luna_start": 6, "luna_end": 8, "titlu": "Antracnoză + putregai", "descriere": "Cupru preventiv. Atenție la putregaiul apical (lipsă calciu) — adăugați Ca foliar.", "conditii": "Vreme caldă-umedă"},
+        {"tip": "cules", "luna_start": 7, "luna_end": 10, "titlu": "Cules", "descriere": "Verzi sau colorați — colorați au mai mult zahăr. Tăiați cu codiță.", "conditii": "Fără brumă"}
+      ]
+    },
+    {
+      "id": "castraveti",
+      "nume": "Castraveți",
+      "categorie": "legume_fructifere",
+      "icon": "🥒",
+      "lucrari": [
+        {"tip": "plantat", "luna_start": 5, "luna_end": 6, "titlu": "Semănat direct sau răsad", "descriere": "Semănat direct după 10 mai. La 40x80 cm pentru cei pe sol; 30 cm pentru cei pe spalieri.", "conditii": "T sol > 15°C"},
+        {"tip": "stropit", "luna_start": 6, "luna_end": 8, "titlu": "Mană + făinare", "descriere": "Tratamente alternative cu cupru și fungicide sistemice. Castraveții se îmbolnăvesc rapid.", "conditii": "La primele semne sau preventiv în veri umede"},
+        {"tip": "cules", "luna_start": 6, "luna_end": 9, "titlu": "Cules zilnic/2 zile", "descriere": "Culegere frecventă — castraveții lăsați se îmbătrânesc și planta scade producția.", "conditii": "Dimineața, fructe ferme"}
+      ]
+    },
+    {
+      "id": "morcov",
+      "nume": "Morcov",
+      "categorie": "legume_radacinoase",
+      "icon": "🥕",
+      "lucrari": [
+        {"tip": "plantat", "luna_start": 3, "luna_end": 4, "titlu": "Semănat primăvară timpurie", "descriere": "Semănat direct la 1-2 cm adâncime, rânduri la 25-30 cm. Germinare lentă (14-21 zile).", "conditii": "T sol > 5°C, sol bine pregătit"},
+        {"tip": "plantat", "luna_start": 6, "luna_end": 7, "titlu": "Semănat vară (pentru iarnă)", "descriere": "Pentru morcovi de păstrat — semănat iunie-iulie, recoltă octombrie.", "conditii": "Udare pentru germinare"},
+        {"tip": "altele", "luna_start": 5, "luna_end": 6, "titlu": "Rărit", "descriere": "Rărire la 4-5 cm între plante când au 5-6 frunze. Esențial pentru morcovi mari.", "conditii": "Sol umed"},
+        {"tip": "cules", "luna_start": 7, "luna_end": 10, "titlu": "Cules", "descriere": "Cei de vară iulie-august, cei de iarnă septembrie-octombrie (înainte de îngheț).", "conditii": "Sol zvântat"}
+      ]
+    },
+    {
+      "id": "ceapa",
+      "nume": "Ceapă",
+      "categorie": "bulboase",
+      "icon": "🧅",
+      "lucrari": [
+        {"tip": "plantat", "luna_start": 3, "luna_end": 4, "titlu": "Plantat arpagic primăvară", "descriere": "Arpagic la 8-10 cm pe rând, 25 cm între rânduri. Adâncime 2-3 cm.", "conditii": "Sol zvântat, T > 5°C"},
+        {"tip": "plantat", "luna_start": 10, "luna_end": 11, "titlu": "Plantat arpagic toamnă (de Sf. Dumitru)", "descriere": "Arpagic mic (< 1 cm) plantat toamna — recoltă mai timpurie anul următor.", "conditii": "Înainte de îngheț, sol uscat"},
+        {"tip": "stropit", "luna_start": 5, "luna_end": 7, "titlu": "Mană ceapă", "descriere": "Cupru preventiv în veri umede. Ceapa e foarte sensibilă la mană (Peronospora).", "conditii": "Frunze uscate"},
+        {"tip": "cules", "luna_start": 7, "luna_end": 8, "titlu": "Recoltare", "descriere": "Când frunzele se culcă și se îngălbenesc 50%. Lăsați 1-2 săpt la zvântat la soare.", "conditii": "Vreme uscată, fără rouă"}
+      ]
+    },
+    {
+      "id": "usturoi",
+      "nume": "Usturoi",
+      "categorie": "bulboase",
+      "icon": "🧄",
+      "lucrari": [
+        {"tip": "plantat", "luna_start": 10, "luna_end": 11, "titlu": "Plantat toamnă (recomandat)", "descriere": "Căței la 5 cm adâncime, 10 cm pe rând. Înainte de îngheț, să apuce să facă rădăcini.", "conditii": "T sol 8-12°C, sol uscat"},
+        {"tip": "plantat", "luna_start": 2, "luna_end": 3, "titlu": "Plantat primăvară (alternativ)", "descriere": "Plantare timpurie — căpățâni mai mici dar utilizabile.", "conditii": "Sol zvântat, după dezgheț"},
+        {"tip": "altele", "luna_start": 5, "luna_end": 6, "titlu": "Tăiat săgețile (la cel cu tulpini)", "descriere": "Eliminați tulpinile florifere — concentrează energia în bulb.", "conditii": "Când săgețile au făcut o buclă completă"},
+        {"tip": "cules", "luna_start": 6, "luna_end": 7, "titlu": "Recoltare", "descriere": "Când 50% din frunze se îngălbenesc. Smulgeți cu furca, lăsați la zvântat la umbră 2 săpt.", "conditii": "Vreme uscată"}
+      ]
+    },
+    {
+      "id": "cartof",
+      "nume": "Cartof",
+      "categorie": "camp",
+      "icon": "🥔",
+      "lucrari": [
+        {"tip": "plantat", "luna_start": 3, "luna_end": 4, "titlu": "Plantare timpurie", "descriere": "Tuberculi încolțiți, la 8-10 cm adâncime, 30 cm pe rând, 70 cm între rânduri.", "conditii": "T sol > 7°C, sol zvântat"},
+        {"tip": "lucrare_sol", "luna_start": 5, "luna_end": 6, "titlu": "Mușuroit", "descriere": "Acoperiți tulpinile cu pământ — 2 mușuroituri (la 15 cm înălțime, apoi la 30 cm).", "conditii": "Sol umed, după ploaie/udare"},
+        {"tip": "stropit", "luna_start": 6, "luna_end": 8, "titlu": "Mană cartof + gândac de Colorado", "descriere": "Cupru + insecticid (la primii gândaci). În veri umede, repetare la 10 zile.", "conditii": "Plante 30+ cm, monitorizare săptămânală"},
+        {"tip": "cules", "luna_start": 8, "luna_end": 9, "titlu": "Recoltare", "descriere": "Când vrejii se usucă. Săpați cu furca, lăsați la zvântat 2-3 ore, depozitați la întuneric.", "conditii": "Sol zvântat, vreme uscată"}
+      ]
+    },
+    {
+      "id": "varza",
+      "nume": "Varză",
+      "categorie": "frunzoase",
+      "icon": "🥬",
+      "lucrari": [
+        {"tip": "altele", "luna_start": 2, "luna_end": 3, "titlu": "Răsaduri varză timpurie", "descriere": "Semănat în răsadnițe pentru varza de primăvară.", "conditii": "T 15-20°C"},
+        {"tip": "plantat", "luna_start": 4, "luna_end": 5, "titlu": "Plantare varză timpurie/vară", "descriere": "La 40x50 cm. Suportă bine racoarea.", "conditii": "Sol pregătit, fără ger sub -2°C"},
+        {"tip": "plantat", "luna_start": 6, "luna_end": 7, "titlu": "Plantare varză de toamnă", "descriere": "Soiurile pentru murat — plantare iunie-iulie, recoltă octombrie-noiembrie.", "conditii": "Udare consistentă"},
+        {"tip": "stropit", "luna_start": 5, "luna_end": 9, "titlu": "Omizi varză", "descriere": "Bacillus thuringiensis (BIO) sau insecticid. Inspecție săptămânală pentru ouă galbene.", "conditii": "La apariția primilor fluturi albi"},
+        {"tip": "cules", "luna_start": 6, "luna_end": 11, "titlu": "Cules", "descriere": "Varză timpurie iunie, vară iulie-august, toamnă octombrie-noiembrie.", "conditii": "Căpățâni ferme"}
+      ]
+    },
+    {
+      "id": "fasole",
+      "nume": "Fasole",
+      "categorie": "camp",
+      "icon": "🫘",
+      "lucrari": [
+        {"tip": "plantat", "luna_start": 5, "luna_end": 6, "titlu": "Semănat fasole verde/uscată", "descriere": "Direct în câmp DUPĂ ultimul îngheț. La 5 cm adâncime, 10-15 cm pe rând.", "conditii": "T sol > 12°C"},
+        {"tip": "cules", "luna_start": 7, "luna_end": 9, "titlu": "Cules", "descriere": "Fasole verde: păstăi tinere, frecvent. Fasole uscată: când păstăile sunt galbene-uscate.", "conditii": "Fără rouă"}
+      ]
+    },
+    {
+      "id": "porumb",
+      "nume": "Porumb",
+      "categorie": "camp",
+      "icon": "🌽",
+      "lucrari": [
+        {"tip": "plantat", "luna_start": 4, "luna_end": 5, "titlu": "Semănat", "descriere": "La 4-6 cm adâncime, 25 cm pe rând, 70 cm între rânduri. Densitate 60-70 mii pl/ha.", "conditii": "T sol > 10°C, sol zvântat"},
+        {"tip": "lucrare_sol", "luna_start": 5, "luna_end": 6, "titlu": "Prașilă", "descriere": "2-3 prașile manuale/mecanice. Prima la 4-6 frunze.", "conditii": "Sol zvântat după ploaie"},
+        {"tip": "cules", "luna_start": 7, "luna_end": 10, "titlu": "Cules", "descriere": "Porumb dulce: iulie-august, când boabele lasă lapte la zgâriere. Boabe pentru făină: oct.", "conditii": "Depinde de soi"}
+      ]
+    },
+    {
+      "id": "salata",
+      "nume": "Salată",
+      "categorie": "frunzoase",
+      "icon": "🥗",
+      "lucrari": [
+        {"tip": "plantat", "luna_start": 3, "luna_end": 4, "titlu": "Semănat primăvară", "descriere": "Direct sau răsad. Suportă răcoarea. Pentru recoltă continuă — semănat la 2 săpt.", "conditii": "T sol > 4°C"},
+        {"tip": "plantat", "luna_start": 8, "luna_end": 9, "titlu": "Semănat toamnă", "descriere": "Soiurile rezistente la frig. Recoltă octombrie-noiembrie.", "conditii": "T < 25°C (nu germinează la căldură)"},
+        {"tip": "cules", "luna_start": 5, "luna_end": 11, "titlu": "Cules", "descriere": "Toată planta sau frunze externe. Înainte să tragă în săgeată.", "conditii": "Dimineața răcoros"}
+      ]
+    },
+    {
+      "id": "patrunjel",
+      "nume": "Pătrunjel",
+      "categorie": "aromatice",
+      "icon": "🌿",
+      "lucrari": [
+        {"tip": "plantat", "luna_start": 3, "luna_end": 4, "titlu": "Semănat primăvară", "descriere": "Direct, la 1 cm adâncime. Germinează lent (15-21 zile) — udați frecvent.", "conditii": "Sol umed, T > 5°C"},
+        {"tip": "cules", "luna_start": 5, "luna_end": 11, "titlu": "Cules frunze", "descriere": "Pe rând, frunzele exterioare. Continuă să producă tot sezonul.", "conditii": "Fără rouă pentru păstrare"}
+      ]
+    },
+    {
+      "id": "busuioc",
+      "nume": "Busuioc",
+      "categorie": "aromatice",
+      "icon": "🌱",
+      "lucrari": [
+        {"tip": "altele", "luna_start": 3, "luna_end": 4, "titlu": "Răsaduri", "descriere": "Semănat în casă, T 22°C. Răsare în 7-10 zile.", "conditii": "Lumină multă"},
+        {"tip": "plantat", "luna_start": 5, "luna_end": 6, "titlu": "Plantare câmp", "descriere": "DUPĂ ultimul îngheț. La 20x30 cm. Busuiocul nu suportă deloc frigul.", "conditii": "T sol > 15°C"},
+        {"tip": "cules", "luna_start": 6, "luna_end": 9, "titlu": "Cules frunze", "descriere": "Tăiați vârfurile pentru a stimula ramificarea. Eliminați mugurii florali.", "conditii": "Dimineața după rouă"}
+      ]
+    }
+  ]
+}

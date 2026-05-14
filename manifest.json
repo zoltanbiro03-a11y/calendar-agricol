@@ -1,0 +1,15 @@
+{
+  "name": "Calendar Agricol România",
+  "short_name": "Calendar Agricol",
+  "description": "Calendar agricol cu prognoză meteo și alerte pentru pomi, viță, legume — România.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f0fdf4",
+  "theme_color": "#15803d",
+  "lang": "ro",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

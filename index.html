@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#15803d">
+<meta name="description" content="Calendar agricol pentru România cu prognoză meteo și alerte personalizate pentru pomi, viță, legume.">
+<title>Calendar Agricol România</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+<link rel="apple-touch-icon" href="icons/icon.svg">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: { 50:'#f0fdf4', 100:'#dcfce7', 500:'#22c55e', 600:'#16a34a', 700:'#15803d', 800:'#166534', 900:'#14532d' }
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .lucrare-card { transition: transform 0.15s, box-shadow 0.15s; }
+  .lucrare-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+  .luna-tab { transition: all 0.2s; }
+  .luna-tab.active { background: #15803d; color: white; }
+  .alert-pulse { animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% {opacity:1} 50% {opacity:.7} }
+  details summary { cursor: pointer; }
+  details summary::-webkit-details-marker { display: none; }
+  details[open] summary .chevron { transform: rotate(90deg); }
+  .chevron { transition: transform 0.2s; }
+  @media (max-width: 640px) {
+    .luna-tabs { overflow-x: auto; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+  }
+</style>
+</head>
+<body class="bg-gradient-to-b from-primary-50 to-white min-h-screen text-gray-800">
+
+<header class="bg-primary-700 text-white shadow-lg sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <h1 class="text-lg sm:text-xl font-bold flex items-center gap-2">
+      <span class="text-2xl">🌾</span>
+      <span>Calendar Agricol România</span>
+    </h1>
+    <button id="btn-setari" class="text-sm bg-primary-800 hover:bg-primary-900 px-3 py-1.5 rounded-md transition">⚙️ Setări</button>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-6">
+
+  <!-- Pasul 1: Locație -->
+  <section id="sectiune-locatie" class="bg-white rounded-xl shadow-md p-5 mb-5">
+    <h2 class="text-lg font-semibold mb-3 flex items-center gap-2">📍 Locația ta</h2>
+    <div class="grid sm:grid-cols-2 gap-3">
+      <select id="select-judet" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+        <option value="">— Alege județul —</option>
+      </select>
+      <button id="btn-gps" class="bg-primary-100 hover:bg-primary-200 text-primary-800 font-medium p-3 rounded-lg transition flex items-center justify-center gap-2">
+        📡 Folosește GPS-ul telefonului
+      </button>
+    </div>
+    <p id="locatie-info" class="text-sm text-gray-600 mt-3 hidden"></p>
+  </section>
+
+  <!-- Pasul 2: Categorii și culturi -->
+  <section id="sectiune-culturi" class="bg-white rounded-xl shadow-md p-5 mb-5">
+    <h2 class="text-lg font-semibold mb-3 flex items-center gap-2">🌱 Ce cultivi?</h2>
+    <p class="text-sm text-gray-600 mb-3">Bifează culturile tale. Calendarul se va construi automat.</p>
+    <div id="categorii-list" class="space-y-2"></div>
+    <div class="mt-4 flex flex-wrap gap-2">
+      <button id="btn-selectie-toate" class="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded">Selectează toate</button>
+      <button id="btn-deselectie-toate" class="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded">Deselectează toate</button>
+      <span id="contor-culturi" class="text-xs text-primary-700 font-medium px-3 py-1.5"></span>
+    </div>
+  </section>
+
+  <!-- Meteo -->
+  <section id="sectiune-meteo" class="bg-white rounded-xl shadow-md p-5 mb-5 hidden">
+    <h2 class="text-lg font-semibold mb-3 flex items-center gap-2">🌤️ Prognoza meteo — 7 zile</h2>
+    <div id="meteo-loading" class="text-gray-500 text-sm">Se încarcă prognoza...</div>
+    <div id="meteo-grid" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2"></div>
+    <div id="alerte-meteo" class="mt-4 space-y-2"></div>
+  </section>
+
+  <!-- Calendar -->
+  <section id="sectiune-calendar" class="bg-white rounded-xl shadow-md p-5 mb-5 hidden">
+    <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+      <h2 class="text-lg font-semibold flex items-center gap-2">📅 Calendarul tău</h2>
+      <div class="flex gap-2">
+        <button id="btn-vedere-luna" class="text-sm bg-primary-600 text-white px-3 py-1.5 rounded">Pe lună</button>
+        <button id="btn-vedere-tot" class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1.5 rounded">Tot anul</button>
+      </div>
+    </div>
+    <div id="luna-tabs" class="luna-tabs flex gap-1 mb-4 pb-2 border-b"></div>
+    <div id="calendar-continut"></div>
+  </section>
+
+  <!-- Empty state -->
+  <section id="empty-state" class="bg-white rounded-xl shadow-md p-8 text-center text-gray-500">
+    <div class="text-6xl mb-3">🌻</div>
+    <p class="text-lg">Alege locația și culturile tale pentru a genera calendarul.</p>
+  </section>
+
+</main>
+
+<footer class="text-center text-xs text-gray-500 py-6">
+  Date meteo: <a href="https://open-meteo.com" class="underline" target="_blank">Open-Meteo</a> ·
+  Calendar agronomic informativ — adaptați la fenofazele reale ale plantelor.
+</footer>
+
+<!-- Modal setări -->
+<div id="modal-setari" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4" onclick="if(event.target===this) this.classList.add('hidden')">
+  <div class="bg-white rounded-xl max-w-md w-full p-5 shadow-2xl">
+    <h3 class="text-lg font-bold mb-4">Setări</h3>
+    <label class="flex items-center gap-2 mb-3">
+      <input type="checkbox" id="set-bio" class="w-4 h-4 accent-primary-600">
+      <span class="text-sm">Preferă tratamente bio (cupru, sulf, Bt)</span>
+    </label>
+    <label class="flex items-center gap-2 mb-3">
+      <input type="checkbox" id="set-notif" class="w-4 h-4 accent-primary-600">
+      <span class="text-sm">Notificări browser (zilnic dimineața)</span>
+    </label>
+    <div class="mt-4 pt-4 border-t">
+      <button id="btn-reset" class="text-sm text-red-600 hover:underline">Resetează toate datele</button>
+    </div>
+    <button onclick="document.getElementById('modal-setari').classList.add('hidden')" class="w-full mt-4 bg-primary-600 hover:bg-primary-700 text-white py-2 rounded">Închide</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(()=>{}));
+  }
+</script>
+</body>
+</html>
